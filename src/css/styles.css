@@ -108,6 +108,23 @@ button:hover {
   margin: 20px auto;
 }
 
+.load-more {
+  margin: auto;
+  margin-top: 32px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.load-more:hover {
+  background: #0056b3;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
