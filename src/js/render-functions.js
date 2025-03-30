@@ -10,7 +10,7 @@ export function clearGallery() {
 }
 
 // Функція рендерингу нових зображень
-export function renderGallery(images) {
+export function renderGallery(images, append = false) {
     const markup = images.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
         <a href="${largeImageURL}" class="gallery-item">
             <img src="${webformatURL}" alt="${tags}" />
@@ -23,9 +23,15 @@ export function renderGallery(images) {
         </a>
     `).join('');
 
-    gallery.innerHTML += markup;
-    refreshLightbox(); // Викликаємо оновлення Lightbox
+    if (append) {
+        gallery.innerHTML += markup;
+    } else {
+        gallery.innerHTML = markup;
+    }
+    
+    refreshLightbox();
 }
+
 
 // Функція для оновлення SimpleLightbox
 export function refreshLightbox() {
